@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card product-item">
-            <img src="../assets/logo.png" class="card-img-top" alt />
+            <img src="../assets/bike_1.jpg" class="card-img-top py-3" alt />
             <div class="card-body">
               <h5 class="card-title">Bike Giant Roam 2</h5>
               <p class="card-text">Lorem ipsum</p>
@@ -16,7 +16,7 @@
 
         <div class="col-md-4">
           <div class="card product-item">
-            <img src="../assets/logo.png" class="card-img-top" alt />
+            <img src="../assets/bike_2.jpg" class="card-img-top py-3" alt />
             <div class="card-body">
               <h5 class="card-title">Bike Giant Cross</h5>
               <p class="card-text">Lorem ipsum</p>
@@ -27,7 +27,7 @@
 
         <div class="col-md-4">
           <div class="card product-item">
-            <img src="../assets/logo.png" class="card-img-top" alt />
+            <img src="../assets/bike_3.jpg" class="card-img-top py-3" alt />
             <div class="card-body">
               <h5 class="card-title">Bike Giant Gravel</h5>
               <p class="card-text">Lorem ipsum</p>

@@ -34,7 +34,12 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <a
+            class="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+            data-toggle="modal"
+            data-target="#login"
+          >Search</a>
         </form>
       </div>
     </nav>
@@ -46,7 +51,8 @@ export default {
   name: "Navbar",
   props: {
     msg: String
-  }
+  },
+  components: {}
 };
 </script>
 
