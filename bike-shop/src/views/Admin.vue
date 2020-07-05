@@ -1,14 +1,17 @@
 <template>
   <div class="admin">
-    <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+    <div class="page-wrapper default-theme sidebar-bg bg1" :class="{'toggled' : !closeSidebar}">
+      <button @click="closeSidebar = false" class="btn btn-outline-primary m-4">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
           <!-- sidebar-brand  -->
           <div class="sidebar-item sidebar-brand">
             <a href="#">pro sidebar</a>
-            <div id="close-sidebar" @click="closeMenu">
-              <i class="fas fa-times"></i>
-            </div>
+            <button id="close-sidebar" @click="closeSidebar = true">
+              <i class="fas fa-times text-secondary"></i>
+            </button>
           </div>
           <!-- sidebar-header  -->
           <div class="sidebar-item sidebar-header d-flex flex-nowrap">
@@ -119,6 +122,23 @@ export default {
   name: "Admin",
   components: {
     Hero
+  },
+  methods: {
+    closeMenu() {
+      $(".page-wrapper").toggleClass("toggled");
+    }
+  },
+  data() {
+    return {
+      closeSidebar: false
+    };
   }
 };
 </script>
+
+<style scoped lang="scss">
+#close-sidebar {
+  background: none;
+  border: none;
+}
+</style>
