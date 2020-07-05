@@ -40,7 +40,8 @@ export default {
 .hero {
   padding: 7rem 0;
   background-image: url("../assets/homepage.svg");
-  background-position-x: 550px;
+  background-position-x: right;
+  background-position-y: 20px;
   background-repeat: no-repeat;
 }
 .hero .container {

@@ -1,5 +1,7 @@
 <template>
-  <div class="home">
+  <div class="about">
+    <Navbar></Navbar>
+    <h1>This is an home page</h1>
     <Hero />
     <Products />
   </div>
