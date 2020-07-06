@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="navigation">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Bike Shop</a>
       <button
@@ -57,4 +57,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.navigation {
+  position: absolute;
+  width: 100%;
+}
+</style>

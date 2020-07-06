@@ -52,8 +52,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .products {
-  margin-top: 7rem;
+  height: 100vh;
   background: #f2f2f2;
-  padding-bottom: 3rem;
 }
 </style>
