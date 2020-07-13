@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="form-group">
-                  <button class="btn btn-primary" @click="login">Login</button>
+                  <button class="btn btn-primary">Login</button>
                 </div>
               </div>
               <div
