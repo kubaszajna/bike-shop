@@ -48,12 +48,53 @@
                   <td>{{product.data().name}}</td>
                   <td>{{product.data().price}}</td>
                   <td>
-                    <button class="btn btn-primary">Edit</button>
+                    <button
+                      data-toggle="modal"
+                      data-target="#edit"
+                      @click="editProduct(product)"
+                      class="btn btn-primary"
+                    >Edit</button>
                     <button @click="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
                   </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="edit"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit product</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Product name"
+                v-model="product.name"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Price" v-model="product.price" class="form-control" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button @click="updateProduct()" type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -74,10 +115,26 @@ export default {
       product: {
         name: null,
         price: null
-      }
+      },
+      activeItem: null
     };
   },
   methods: {
+    updateProduct() {
+      db.collection("products")
+        .doc(this.activeItem)
+        .update(this.product)
+        .then(function() {
+          console.log("Document successfully updated!");
+        })
+        .catch(function(error) {
+          console.error("Error updating document: ", error);
+        });
+    },
+    editProduct(product) {
+      this.product = product.data();
+      this.activeItem = product.id;
+    },
     deleteProduct(doc) {
       if (confirm("Are you sure?")) {
         db.collection("products")
