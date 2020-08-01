@@ -34,20 +34,27 @@
           </div>
 
           <h3>Product list</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="product in products">
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Modify</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="product in products">
+                  <td>{{product.data().name}}</td>
+                  <td>{{product.data().price}}</td>
+                  <td>
+                    <button class="btn btn-primary">Edit</button>
+                    <button @click="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -71,12 +78,26 @@ export default {
     };
   },
   methods: {
+    deleteProduct(doc) {
+      if (confirm("Are you sure?")) {
+        db.collection("products")
+          .doc(doc)
+          .delete()
+          .then(function() {
+            console.log("Document successfully deleted!");
+          })
+          .catch(function(error) {
+            console.error("Error removing document: ", error);
+          });
+      } else {
+      }
+    },
     readData() {
       db.collection("products")
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            this.products.push(doc.data());
+            this.products.push(doc);
           });
         });
     },
