@@ -120,11 +120,20 @@ export default {
     };
   },
   methods: {
+    watcher() {
+      db.collection("products").onSnapshot(querySnapshot => {
+        this.products = [];
+        querySnapshot.forEach(doc => {
+          this.products.push(doc);
+        });
+      });
+    },
     updateProduct() {
       db.collection("products")
         .doc(this.activeItem)
         .update(this.product)
-        .then(function() {
+        .then(() => {
+          this.watcher();
           console.log("Document successfully updated!");
         })
         .catch(function(error) {
