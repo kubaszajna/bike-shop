@@ -35,7 +35,18 @@
                   <th>Modify</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr v-for="product in products">
+                  <td>{{product.name}}</td>
+
+                  <td>{{product.price}}</td>
+
+                  <td>
+                    <button class="btn btn-primary" @click="editProduct(product)">Edit</button>
+                    <button class="btn btn-danger" @click="deleteProduct(product)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -71,7 +82,14 @@
                 </div>
 
                 <div class="form-group">
-                  <!-- <vue-editor v-model="product.description"></vue-editor> -->
+                  <textarea
+                    name="description"
+                    class="form-control"
+                    id
+                    cols="30"
+                    rows="10"
+                    placeholder="Product description"
+                  ></textarea>
                 </div>
               </div>
               <div class="col-md-4">
@@ -226,7 +244,7 @@ export default {
       this.$firestore.products.doc(this.product.id).update(this.product);
       Toast.fire({
         type: "success",
-        title: "Updated  successfully"
+        title: "Updated successfully"
       });
     },
     editProduct(product) {
@@ -244,11 +262,8 @@ export default {
         confirmButtonText: "Yes, delete it!"
       }).then(result => {
         if (result.value) {
-          this.$firestore.products.doc(doc.id).delete();
-          Toast.fire({
-            type: "success",
-            title: "Deleted  successfully"
-          });
+          this.$firestore.products.doc(doc[".key"]).delete();
+          Swal.fire("Deleted!", "Yoour file has been deleted.", "success");
         }
       });
     },
