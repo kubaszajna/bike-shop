@@ -267,7 +267,6 @@ export default {
         }
       });
     },
-    readData() {},
     addProduct() {
       this.$firestore.products.add(this.product);
 
