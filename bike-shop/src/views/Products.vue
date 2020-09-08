@@ -87,14 +87,7 @@
                 </div>
 
                 <div class="form-group">
-                  <textarea
-                    name="description"
-                    class="form-control"
-                    id
-                    cols="30"
-                    rows="10"
-                    placeholder="Product description"
-                  ></textarea>
+                  <vue-editor v-model="product.description"></vue-editor>
                 </div>
               </div>
               <div class="col-md-4">
@@ -113,9 +106,8 @@
                 <div class="form-group">
                   <input
                     type="text"
-                    @keyup.188="addTag"
                     placeholder="Product tags"
-                    v-model="tag"
+                    v-model="product.tags"
                     class="form-control"
                   />
 
@@ -165,10 +157,11 @@
 
 <script>
 import { fb, db } from "../firebase";
+import { VueEditor } from "vue2-editor";
 export default {
   name: "Products",
   components: {
-    //VueEditor
+    VueEditor
   },
   props: {
     msg: String
