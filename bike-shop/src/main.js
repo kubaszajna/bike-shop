@@ -5,6 +5,10 @@ import jQuery from 'jquery';
 import { fb } from './firebase';
 import VueFirestore from 'vue-firestore'
 
+Vue.use(VueFirestore, {
+  key: 'id',
+  enumerable: true
+})
 
 Vue.use(VueFirestore)
 

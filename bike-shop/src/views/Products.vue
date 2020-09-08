@@ -42,7 +42,12 @@
                   <td>{{product.price}}</td>
 
                   <td>
-                    <button class="btn btn-primary" @click="editProduct(product)">Edit</button>
+                    <button
+                      class="btn btn-primary"
+                      data-toggle="modal"
+                      data-target="#product"
+                      @click="editProduct(product)"
+                    >Edit</button>
                     <button class="btn btn-danger" @click="deleteProduct(product)">Delete</button>
                   </td>
                 </tr>
@@ -239,17 +244,17 @@ export default {
     addNew() {
       this.modal = "new";
       this.reset();
+      //Swal.fire("Added!", "Your product has been added.", "success");
     },
     updateProduct() {
       this.$firestore.products.doc(this.product.id).update(this.product);
-      Toast.fire({
-        type: "success",
-        title: "Updated successfully"
-      });
+
+      Swal.fire("Updated!", "Your product has been updated.", "success");
     },
     editProduct(product) {
       this.modal = "edit";
       this.product = product;
+      this.activeItem = product[".key"];
     },
     deleteProduct(doc) {
       Swal.fire({
@@ -270,15 +275,17 @@ export default {
     addProduct() {
       this.$firestore.products.add(this.product);
 
-      Toast.fire({
-        type: "success",
-        title: "Product created successfully"
-      });
+      // Toast.fire({
+      //   type: "success",
+      //   title: "Product created successfully"
+      // });
     },
-    reset() {}
+    reset() {
+      this.product = {};
+    }
   },
   created() {
-    this.readData();
+    //this.readData();
   }
 };
 </script>
