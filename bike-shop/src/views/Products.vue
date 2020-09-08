@@ -43,7 +43,7 @@
 
                   <td>
                     <button
-                      class="btn btn-primary"
+                      class="btn btn-primary mr-10"
                       data-toggle="modal"
                       data-target="#product"
                       @click="editProduct(product)"
@@ -107,13 +107,14 @@
                   <input
                     type="text"
                     placeholder="Product tags"
-                    v-model="product.tags"
+                    v-model="tag"
+                    @keyup.enter="addTag"
                     class="form-control"
                   />
 
                   <div class="d-flex">
                     <p v-for="tag in product.tags">
-                      <span class="p-1">{{tag}}</span>
+                      <span>{{tag}},</span>
                     </p>
                   </div>
                 </div>
@@ -174,7 +175,7 @@ export default {
         description: null,
         price: null,
         tags: [],
-        images: []
+        image: null
       },
       activeItem: null,
       modal: null,
@@ -236,7 +237,6 @@ export default {
     },
     addNew() {
       this.modal = "new";
-      this.reset();
       //Swal.fire("Added!", "Your product has been added.", "success");
     },
     updateProduct() {
@@ -286,5 +286,8 @@ export default {
 <style scoped lang="scss">
 .products {
   margin: 0 80px;
+}
+.mr-10 {
+  margin-right: 10px;
 }
 </style>
