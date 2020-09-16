@@ -83,7 +83,7 @@
                   <input type="text" placeholder="Product tags" v-model="tag" @keyup.enter="addTag" class="form-control" />
 
                   <div class="d-flex">
-                    <p v-for="tag in product.tags">
+                    <p v-for="tag in product.tags" class="p-1">
                       <span>{{ tag }}</span>
                     </p>
                   </div>
@@ -95,11 +95,8 @@
                 </div>
 
                 <div class="form-group d-flex">
-                  <div class="p-1" v-for="(image, index) in product.images">
-                    <div class="img-wrapp">
-                      <img :src="image" alt width="80px" />
-                      <span class="delete-img" @click="deleteImage(image, index)">X</span>
-                    </div>
+                  <div v-for="image in product.images">
+                    <img :src="image" alt="" width="80px" />
                   </div>
                 </div>
               </div>
@@ -141,7 +138,7 @@ export default {
         description: null,
         price: null,
         tags: [],
-        images: null,
+        images: [],
       },
       activeItem: null,
       modal: null,
@@ -171,7 +168,6 @@ export default {
       this.tag = "";
     },
     uploadImage(e) {
-      //console.log(e.target.files[0]);
       if (e.target.files[0]) {
         let file = e.target.files[0];
 
@@ -185,8 +181,7 @@ export default {
           (error) => {},
           () => {
             uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.product.image = downloadURL;
-              console.log("File good", downloadURL);
+              this.product.images.push(downloadURL);
             });
           }
         );
