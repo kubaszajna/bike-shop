@@ -29,7 +29,7 @@ export default {
   components: {
     Hero,
     Products,
-    Login
-  }
+    Login,
+  },
 };
 </script>

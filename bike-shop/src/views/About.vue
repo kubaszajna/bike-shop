@@ -15,7 +15,7 @@ export default {
   name: "Home",
   components: {
     Hero,
-    Products
-  }
+    Products,
+  },
 };
 </script>

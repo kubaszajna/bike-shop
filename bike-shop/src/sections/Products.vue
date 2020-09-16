@@ -44,8 +44,8 @@
 export default {
   name: "Products",
   props: {
-    msg: String
-  }
+    msg: String,
+  },
 };
 </script>
 

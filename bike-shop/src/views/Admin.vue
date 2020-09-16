@@ -1,6 +1,6 @@
 <template>
   <div class="admin">
-    <div class="page-wrapper default-theme sidebar-bg bg1" :class="{'toggled' : !closeSidebar}">
+    <div class="page-wrapper default-theme sidebar-bg bg1" :class="{ toggled: !closeSidebar }">
       <button @click="closeSidebar = false" class="btn btn-outline-primary m-4">
         <i class="fas fa-bars"></i>
       </button>
@@ -93,7 +93,7 @@ import { fb } from "../firebase";
 export default {
   name: "Admin",
   components: {
-    Hero
+    Hero,
   },
   methods: {
     closeMenu() {
@@ -105,16 +105,16 @@ export default {
         .then(() => {
           this.$router.replace("/");
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
-    }
+    },
   },
   data() {
     return {
-      closeSidebar: false
+      closeSidebar: false,
     };
-  }
+  },
 };
 </script>
 
