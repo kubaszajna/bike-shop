@@ -95,8 +95,11 @@
                 </div>
 
                 <div class="form-group d-flex">
-                  <div v-for="image in product.images">
-                    <img :src="image" alt="" width="80px" />
+                  <div class="p-1" v-for="(image, index) in product.images">
+                    <div class="img-wrapp">
+                      <img :src="image" class="p-1" alt="upload_image" width="80px" />
+                      <span class="delete-img" @click="deleteImage(image, index)">X</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,11 +230,6 @@ export default {
     },
     addProduct() {
       this.$firestore.products.add(this.product);
-
-      // Toast.fire({
-      //   type: "success",
-      //   title: "Product created successfully"
-      // });
     },
     reset() {
       this.product = {};
@@ -249,5 +247,16 @@ export default {
 }
 .mr-10 {
   margin-right: 10px;
+}
+.img-wrapp {
+  position: relative;
+}
+.img-wrapp .delete-img {
+  position: absolute;
+  top: -14px;
+  left: -2px;
+}
+.img-wrapp .delete-img:hover {
+  cursor: pointer;
 }
 </style>
