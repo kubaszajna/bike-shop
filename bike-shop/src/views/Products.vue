@@ -196,10 +196,12 @@ export default {
         description: null,
         price: null,
         tags: [],
+        images: [],
       };
     },
     addNew() {
       this.modal = "new";
+      this.reset();
       //Swal.fire("Added!", "Your product has been added.", "success");
     },
     updateProduct() {
@@ -230,9 +232,6 @@ export default {
     },
     addProduct() {
       this.$firestore.products.add(this.product);
-    },
-    reset() {
-      this.product = {};
     },
   },
   created() {
