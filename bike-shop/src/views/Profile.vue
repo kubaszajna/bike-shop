@@ -33,7 +33,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" name="" placeholder="Full name" class="form-control" />
+                    <input type="text" v-model="profile.name" name="" placeholder="Full name" class="form-control" />
                   </div>
                 </div>
 
@@ -57,7 +57,7 @@
 
                 <div class="col-md-4">
                   <div class="form-group">
-                    <input type="submit" value="Save Changes" class="btn btn-primary w-100" />
+                    <input type="submit" @click="updateProfile" value="Save Changes" class="btn btn-primary w-100" />
                   </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@
 
                 <div class="col-md-4">
                   <div class="form-group">
-                    <input type="submit" value="Save Changes" class="btn btn-primary w-100" />
+                    <input type="text" value="Save Changes" class="btn btn-primary w-100" />
                   </div>
                 </div>
 
@@ -123,10 +123,47 @@
 </template>
 
 <script>
+import { fb, db } from "../firebase";
+import { VueEditor } from "vue2-editor";
+
 export default {
-  name: "Products",
+  name: "Profile",
+  components: {
+    //VueEditor,
+  },
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      profile: {
+        name: null,
+        phone: null,
+        address: null,
+        postcode: null,
+      },
+      account: {
+        name: null,
+        email: null,
+        photoUrl: null,
+        emailVerified: null,
+        password: null,
+        confirmPassword: null,
+        uid: null,
+      },
+    };
+  },
+  firestore() {
+    const user = fb.auth().currentUser;
+    return {
+      profile: db.collection("profiles").doc(user.uid),
+    };
+  },
+  methods: {
+    updateProfile() {
+      this.$firestore.profile.update(this.profile);
+    },
+    uploadImage() {},
   },
 };
 </script>
