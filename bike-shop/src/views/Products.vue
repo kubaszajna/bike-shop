@@ -225,7 +225,7 @@ export default {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.value) {
-          this.$firestore.products.doc(doc[".key"]).delete();
+          this.$firestore.products.doc(doc.id).delete();
           Swal.fire("Deleted!", "Yoour file has been deleted.", "success");
         }
       });
