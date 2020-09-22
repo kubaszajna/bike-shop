@@ -18,6 +18,9 @@ import 'bootstrap';
 import 'popper.js';
 import './assets/app.scss';
 
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
+
 import Swal from 'sweetalert2';
 window.Swal = Swal;
 

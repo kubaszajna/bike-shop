@@ -3,6 +3,7 @@
     <Navbar></Navbar>
     <Hero />
     <Products />
+    <ProductList />
     <div class="container h-100">
       <div class="row p-5 h-100 justify-content-center align-items-center">
         <div class="col-md-6">
@@ -22,6 +23,7 @@
 <script>
 import Hero from "@/components/Hero.vue";
 import Products from "@/sections/Products.vue";
+import ProductList from "@/sections/ProductList.vue";
 import Login from "@/components/Login.vue";
 
 export default {
