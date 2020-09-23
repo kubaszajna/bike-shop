@@ -3,21 +3,19 @@
     <div class="container">
       <h1 class="text-center p-5">Our Products List</h1>
       <div class="row">
-        <div class="col-md-4" v-for="product in products">
+        <div class="col-md-4" v-for="product in products" v-bind:key="product + 'id'">
           <div class="card product-item">
             <carousel :perPage="1">
-              <slide v-for="(image, index) in product.images">
-                <img :src="image" class="card-img-top" alt="..." width="250px" />
+              <slide v-for="(image, index) in product.images" v-bind:key="index">
+                <img :src="image" class="card-img-top p-20" alt="..." width="250px" />
               </slide>
             </carousel>
-
             <div class="card-body">
               <div class="d-flex justify-content-between">
                 <h5 class="card-title">{{ product.name }}</h5>
-                <h5 class="card-priceS">{{ product.price | currency }}</h5>
+                <h5 class="card-prices">{{ product.price | currency }}</h5>
               </div>
-
-              <add-to-cart :image="getImage(product.images)" :p-id="product.id" :price="product.price" :name="product.name"> </add-to-cart>
+              <add-to-cart :image="getImage(product.images)" :p-id="product.id" :price="product.price" :name="product.name"></add-to-cart>
             </div>
           </div>
         </div>
@@ -56,5 +54,13 @@ export default {
   margin-top: 7rem;
   background: #f2f2f2;
   padding-bottom: 3rem;
+}
+.p-20 {
+  padding: 20px;
+  max-height: 220px;
+  width: auto;
+}
+.VueCarousel-slide {
+  text-align: center;
 }
 </style>

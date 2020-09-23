@@ -21,6 +21,9 @@ import './assets/app.scss';
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
 
+import Vue2Filters from 'vue2-filters'
+Vue.use(Vue2Filters)
+
 import Swal from 'sweetalert2';
 window.Swal = Swal;
 
@@ -34,7 +37,9 @@ const Toast = Swal.mixin({
 
 window.Toast = Toast;
 
-Vue.component('Navbar', require('./components/Navbar.vue').default);
+Vue.component('navbar', require('./components/Navbar.vue').default);
+Vue.component('product-list', require('./sections/ProductList.vue').default);
+Vue.component('add-to-cart', require('./components/AddToCart.vue').default);
 
 Vue.config.productionTip = false;
 
