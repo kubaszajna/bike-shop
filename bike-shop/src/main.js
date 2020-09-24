@@ -5,6 +5,8 @@ import jQuery from 'jquery';
 import { fb } from './firebase';
 import VueFirestore from 'vue-firestore'
 
+import store from './store.js';
+
 Vue.use(VueFirestore, {
   key: 'id',
   enumerable: true
@@ -49,6 +51,7 @@ fb.auth().onAuthStateChanged(function (user) {
   if (!app) {
     new Vue({
       router,
+      store,
       render: h => h(App)
     }).$mount("#app");
   }
