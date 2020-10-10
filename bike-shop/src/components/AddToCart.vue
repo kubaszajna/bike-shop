@@ -11,7 +11,7 @@ export default {
     name: String,
     price: String,
     image: String,
-    productId: String,
+    pId: String,
   },
   data() {
     return {

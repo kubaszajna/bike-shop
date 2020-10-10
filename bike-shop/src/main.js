@@ -41,6 +41,7 @@ window.Toast = Toast;
 
 Vue.component('navbar', require('./components/Navbar.vue').default);
 Vue.component('product-list', require('./sections/ProductList.vue').default);
+Vue.component('mini-cart', require('./components/MiniCart.vue').default);
 Vue.component('add-to-cart', require('./components/AddToCart.vue').default);
 
 Vue.config.productionTip = false;
