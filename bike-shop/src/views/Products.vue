@@ -202,7 +202,6 @@ export default {
     addNew() {
       this.modal = "new";
       this.reset();
-      //Swal.fire("Added!", "Your product has been added.", "success");
     },
     updateProduct() {
       this.$firestore.products.doc(this.product.id).update(this.product);

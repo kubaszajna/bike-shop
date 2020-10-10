@@ -30,7 +30,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="product in products" v-bind:key="product">
+                <tr v-for="product in products">
                   <td>{{ product.name }}</td>
 
                   <td>{{ product.price }}</td>
@@ -83,7 +83,7 @@
                   <input type="text" placeholder="Product tags" v-model="tag" @keyup.enter="addTag" class="form-control" />
 
                   <div class="d-flex">
-                    <p v-for="tag in product.tags" v-bind:key="tag" class="p-1">
+                    <p v-for="tag in product.tags" class="p-1">
                       <span>{{ tag }}</span>
                     </p>
                   </div>
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="form-group d-flex">
-                  <div class="p-1" v-for="(image, index) in product.images" v-bind:key="(image, index)">
+                  <div class="p-1" v-for="(image, index) in product.images" v-bind:key="image, index">
                     <div class="img-wrapp">
                       <img :src="image" class="p-1" alt="upload_image" width="80px" />
                       <span class="delete-img" @click="deleteImage(image, index)">X</span>

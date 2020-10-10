@@ -160,20 +160,17 @@ export default {
     };
   },
   methods: {
-    resetPassword() {
-      const auth = fb.auth();
-      auth
-        .sendPasswordResetEmail(auth.currentUser.email)
-        .then(() => {
-          Toast.fire({
-            type: "success",
-            title: "Email sent",
+    resetPassword(){
+          const auth = fb.auth();
+          auth.sendPasswordResetEmail(auth.currentUser.email).then(() =>  {
+               Toast.fire({
+                type: 'success',
+                title: 'Email sent'
+              })
+          }).catch((error) =>  {
+              console.log(error);
           });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+      },
     updateProfile() {
       this.$firestore.profile.update(this.profile);
     },
