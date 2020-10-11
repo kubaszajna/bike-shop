@@ -18,7 +18,7 @@
                       <div class="media-body">
                         <h5 class="mt-0">{{item.productName}}
 
-                          <span class='float-right' @click="$store.commit('removeFromCart',item)">X</span>
+                          <span class='float-right close-btn' @click="$store.commit('removeFromCart',item)">X</span>
                         </h5>
                         <p class="mt-0">{{item.productPrice * item.productQuantity | currency}}</p>
                         <p class="mt-0">Quantity : {{item.productQuantity }}</p>
@@ -53,5 +53,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.close-btn {
+  cursor: pointer;
+}
 </style>

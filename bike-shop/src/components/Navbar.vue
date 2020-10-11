@@ -17,13 +17,13 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <router-link to="/admin/overview" class="nav-link">Admin Panel</router-link>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             <a class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</a>
-            <a class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit" data-toggle="modal" data-target="#login">Get start</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit" data-toggle="modal" data-target="#login">{{ email }}</a>
             <a class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal" data-target="#miniCart">
               <i class="fas fa-cart-plus"></i>
             </a>
@@ -35,12 +35,23 @@
 </template>
 
 <script>
+import { fb } from "../firebase";
+
 export default {
   name: "Navbar",
+  data() {
+    return {
+      email: "Login | Signup",
+    };
+  },
   props: {
     msg: String,
   },
   components: {},
+  created() {
+    let user = fb.auth().currentUser;
+    this.email = user.email;
+  },
 };
 </script>
 

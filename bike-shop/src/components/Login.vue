@@ -22,6 +22,7 @@
 
                             <h5 class="text-center">Login Please</h5>
                             <div class="form-group">
+                                <label class="text-red text-center w-100">Test user data: admin@administrator.com / admin123</label><br>
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -42,7 +43,7 @@
 
                             <div class="form-group">
                                 <label for="name">Your name</label>
-                                <input type="text" v-model="name" class="form-control" id="name" placeholder="Your nice name">
+                                <input type="text" v-model="name" class="form-control" id="name" placeholder="Your name">
                             </div>
 
                             <div class="form-group">
@@ -145,5 +146,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.text-red {
+  color: red;
+}
 </style>

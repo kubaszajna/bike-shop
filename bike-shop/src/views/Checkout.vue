@@ -5,7 +5,7 @@
 
             <div class="row">
 
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <h4 class="py-4">Checkout page</h4>
                      <ul>
                         <li v-for="item in this.$store.state.cart" class="media">
@@ -21,23 +21,12 @@
 
                     </ul>
                 </div>
-                <div class="col-md-4 py-4">
-                    <p>
+                <div class="col-md-5 py-4">
+                    <h5>
                         Total Price : {{ this.$store.getters.totalPrice | currency }}
-                    </p>
+                    </h5>
 
 
-
-                    <!-- <card class='stripe-card'
-                        :class='{ complete }'
-                        stripe='pk_test_XXXXXXXXXXXXXXXXXXXXXXXX'
-                        :options='stripeOptions'
-                        @change='complete = $event.complete'
-                        />
-
-                        <button class='pay-with-stripe btn btn-primary mt-4' @click='pay' :disabled='!complete'>Pay with credit card</button>
-
-                    </form> -->
                 </div>
             </div>
 

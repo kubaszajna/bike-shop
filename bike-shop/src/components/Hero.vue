@@ -10,7 +10,7 @@
             </p>
             <div class="hero-btn mt-5">
               <button class="btn custom-btn btn-info mr-4">Explore</button>
-              <button class="btn custom-btn btn-outline-secondary">Products</button>
+              <a href="#products" class="btn custom-btn btn-outline-secondary">Products</a>
             </div>
           </div>
         </div>
