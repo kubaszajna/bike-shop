@@ -4,7 +4,7 @@
           <h1 class="text-center p-5">Our Products List</h1>
           <div class="row">
 
-              <div class="col-md-4" v-for="product, index in products" :key="product.id" v-if="index < 3">
+              <div class="col-lg-4 col-md-12 col-sm-12 productBlock" v-for="product, index in products" :key="product.id" v-if="index < 3">
                   <div class="card product-item">
 
                         <carousel :perPage="1">
@@ -71,17 +71,27 @@ data(){
 
 <style scoped lang="scss">
 .products {
-  padding-top: 4rem;
   background: #f2f2f2;
-  padding-bottom: 3rem;
   height: 100vh;
+  padding-bottom: 2rem;
 }
 .p-20 {
   padding: 20px;
   max-height: 220px;
   width: auto;
+  max-width: 100%;
 }
 .VueCarousel-slide {
   text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  .products {
+    height: unset;
+    padding-top: 0;
+  }
+  .productBlock {
+    margin-bottom: 20px;
+  }
 }
 </style>

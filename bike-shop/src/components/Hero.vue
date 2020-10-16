@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="container h-100">
       <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-md-5">
+        <div class="col-md-5 col-sm-12">
           <div class="hero-content">
             <h1 class="herotitle">Bike Shop for Developers</h1>
             <p>
@@ -14,7 +14,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 col-sm-10 imageAbout">
           <div class="graphic">
             <img src="../assets/homepage.svg" alt class="img-fluid" />
           </div>
@@ -37,5 +37,12 @@ export default {
 <style scoped lang="scss">
 .hero {
   height: 100vh;
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    height: unset;
+    margin-top: 5rem;
+  }
 }
 </style>

@@ -21,9 +21,9 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <a class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</a>
-            <a class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit" data-toggle="modal" data-target="#login">{{ email }}</a>
+            <input class="form-control mr-sm-2 my-sm-0 mb-sm-0" type="search" placeholder="Search" aria-label="Search" />
+            <a class="btn btn-outline-success my-2 mb-sm-2 mr-sm-2 mr-2" type="submit">Search</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit" data-toggle="modal" data-target="#login">{{ email }}</a>
             <a class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal" data-target="#miniCart">
               <i class="fas fa-cart-plus"></i>
             </a>
@@ -60,5 +60,16 @@ export default {
 .navigation {
   position: absolute;
   width: 100%;
+}
+.navbar-brand {
+  margin-left: 15px;
+}
+.navbar-collapse {
+  margin: 0 15px;
+}
+@media screen and (min-width: 992px) {
+  .form-control {
+    max-width: 150px;
+  }
 }
 </style>
