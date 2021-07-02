@@ -1,32 +1,22 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import jQuery from 'jquery';
+import { createApp } from 'vue';
 import { fb } from './firebase';
-import VueFirestore from 'vue-firestore'
+import Swal from 'sweetalert2';
 
-import store from './store.js';
+import router from './router.js';
+import store from './store/index.js';
+import App from './App.vue';
 
-Vue.use(VueFirestore, {
-  key: 'id',
-  enumerable: true
-})
-
-Vue.use(VueFirestore)
-
-window.$ = window.jQuery = jQuery;
+import Navbar from './components/layout/Navbar.vue';
+import ProductList from './components/products/ProductList.vue';
+import MiniCart from './components/cart/MiniCart.vue';
+import AddToCart from './components/cart/AddToCart.vue';
 
 import 'bootstrap';
 import 'popper.js';
 import './assets/app.scss';
 
-import VueCarousel from 'vue-carousel';
-Vue.use(VueCarousel);
+const app = createApp(App).use(router).use(store);
 
-import Vue2Filters from 'vue2-filters'
-Vue.use(Vue2Filters)
-
-import Swal from 'sweetalert2';
 window.Swal = Swal;
 
 const Toast = Swal.mixin({
@@ -39,21 +29,16 @@ const Toast = Swal.mixin({
 
 window.Toast = Toast;
 
-Vue.component('navbar', require('./components/Navbar.vue').default);
-Vue.component('product-list', require('./sections/ProductList.vue').default);
-Vue.component('mini-cart', require('./components/MiniCart.vue').default);
-Vue.component('add-to-cart', require('./components/AddToCart.vue').default);
+app.component('navbar', Navbar);
+app.component('product-list', ProductList);
+app.component('mini-cart', MiniCart);
+app.component('add-to-cart', AddToCart);
 
-Vue.config.productionTip = false;
+app.mount("#app");
 
-let app = '';
-
-fb.auth().onAuthStateChanged(function (user) {
+fb.auth().onAuthStateChanged(() => {
   if (!app) {
-    new Vue({
-      router,
-      store,
-      render: h => h(App)
-    }).$mount("#app");
+    createApp(App).use(router).use(store).mount("#app");
   }
 });
+
