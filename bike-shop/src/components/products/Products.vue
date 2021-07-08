@@ -40,19 +40,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Products",
-  props: {
-    msg: String,
-  },
-};
-</script>
+//  <script>
+// export default {
+//   name: "Products",
+//   props: {
+//     msg: String,
+//   },
+// };
+// </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.products {
-  height: 100vh;
-  background: #f2f2f2;
-}
-</style>
+// <style scoped lang="scss">
+// .products {
+//   background: #f2f2f2;
+// }
+// </style>

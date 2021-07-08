@@ -37,4 +37,15 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.add-to-cart {
+  .btn.btn-primary {
+    line-height: 4rem;
+    height: 4rem;
+    padding: 0 1.5rem;
+    letter-spacing: 0.2rem;
+    width: calc(100% - 4rem);
+    margin: 0 2rem 2rem 2rem;
+  }
+}
+</style>

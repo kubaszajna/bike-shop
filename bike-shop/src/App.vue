@@ -4,8 +4,8 @@
   <product-list></product-list>
   <mini-cart></mini-cart>
   <add-to-cart></add-to-cart> -->
+  <the-modal></the-modal>
   <router-view>
-    
   </router-view>
 </template>
 
@@ -15,6 +15,7 @@
 // import ProductList from './components/products/ProductList.vue';
 // import MiniCart from './components/cart/MiniCart.vue';
 // import AddToCart from './components/cart/AddToCart.vue';
+import TheModal from './components/layout/TheModal.vue';
 
 export default {
   components: {
@@ -22,14 +23,20 @@ export default {
     // Navbar,
     // ProductList,
     // MiniCart,
-    // AddToCart
+    // AddToCart,
+    TheModal
   }
 }
 </script>
 
 <style lang="scss">
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'lora-regular', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
