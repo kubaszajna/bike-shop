@@ -1,6 +1,6 @@
 $ease1: cubic-bezier(0.75, 0.885, 0.32, 1);
 $p: #4e567d;
-$r: #ff6a5e;
+$r: #08fc00;
 
 body {
   .custom-container {
@@ -341,7 +341,7 @@ body {
           &.wheel#{$i} {
             &:checked ~ .wheeltoggle {
               &:nth-of-type(#{$i}) {
-                box-shadow: 0 0 0 1px $r, 0 10px 20px -30px $p;
+                box-shadow: 0 0 0 1px #fff, 0 10px 20px -30px $p;
               }
             }
             &:hover ~ .wheeltoggle {

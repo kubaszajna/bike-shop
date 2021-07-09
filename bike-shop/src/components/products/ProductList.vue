@@ -96,14 +96,12 @@ export default {
 article {
   pointer-events: cursor;
 }
-
-@media screen and (max-width: 991px) {
-  .products {
-    height: unset;
-    padding-top: 0;
-  }
-  .productBlock {
-    margin-bottom: 20px;
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-wrap: wrap;
+    .card {
+      width: 100%;
+    }
   }
 }
 </style>
