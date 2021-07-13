@@ -1,14 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Nunito', sans-serif;
-  color: rgba(#000, 0.7);
-}
-
 .modal {
   position: fixed;
   left: 0;
@@ -48,7 +37,7 @@ body {
   }
 
   &-left {
-    padding: 60px 30px 20px;
+    padding: 80px 30px 20px;
     background: #fff;
     flex: 1.5;
     transition-duration: 0.5s;
@@ -58,7 +47,6 @@ body {
 
   &-button {
     color: darken(#c5c5c5, 5%);
-    font-family: 'Nunito', sans-serif;
     font-size: 18px;
     cursor: pointer;
     border: 0;
@@ -128,7 +116,7 @@ body {
 }
 
 .sign-up {
-  margin: 60px 0 0;
+  margin: 20px 0 0;
   font-size: 14px;
   text-align: center;
 
@@ -144,7 +132,6 @@ body {
   color: #fff;
   border-radius: 4px;
   background: #c5c5c5;
-  font-family: 'Nunito', sans-serif;
   transition: 0.3s;
   cursor: pointer;
   height: 4rem;
@@ -159,7 +146,6 @@ body {
 .input-label {
   font-size: 11px;
   text-transform: uppercase;
-  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   letter-spacing: 0.7px;
   color: #c5c5c5;
@@ -180,7 +166,6 @@ body {
     border: 0;
     padding: 4px 0 0;
     font-size: 14px;
-    font-family: 'Nunito', sans-serif;
 
     &::placeholder {
       color: #ccc;

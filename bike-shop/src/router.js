@@ -13,7 +13,7 @@ import Overview from "./pages/admin/Overview.vue";
 import Products from "./pages/admin/Products.vue";
 import Orders from "./pages/admin/Orders.vue";
 import Profile from "./pages/admin/Profile.vue";
-import About from "./components/homepage/About.vue";
+import Services from "./components/homepage/Services.vue";
 import Checkout from "./pages/checkout/Checkout.vue";
 import { fb } from './firebase'
 
@@ -40,7 +40,7 @@ const router = createRouter({
       ]
     },
     { path: "/checkout", component: Checkout },
-    { path: "/about", component: About },
+    { path: "/services", component: Services },
 
     { path: '/:notFound(.*)', component: NotFound }
   ],

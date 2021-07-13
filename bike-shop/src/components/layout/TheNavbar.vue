@@ -7,23 +7,17 @@
     </div>
 
     <nav class="header-nav">
-      <a @click="toggleMenu" class="header-nav__close" title="close" href="#0"
+      <a @click="toggleMenu" class="header-nav__close" title="close" href="#"
         ><span>Close</span></a
       >
 
       <div class="header-nav__content">
         <h3>Navigation</h3>
-        <!-- <button class="modal-button">Click here to login</button> -->
         <ul class="header-nav__list">
           <li class="current">
             <a class="smoothscroll" href="#home" title="home">Home</a>
           </li>
-          <li><a class="smoothscroll" href="#about" title="about">About</a></li>
-          <li>
-            <a class="smoothscroll" href="#services" title="services"
-              >Services</a
-            >
-          </li>
+          <li><a class="smoothscroll" href="#services" title="services">Services</a></li>
           <li><a class="smoothscroll" href="#works" title="works">Works</a></li>
           <li>
             <a class="smoothscroll" href="#clients" title="clients">Clients</a>
@@ -31,13 +25,16 @@
           <li>
             <a class="smoothscroll" href="#contact" title="contact">Contact</a>
           </li>
+          <li>
+            <a href="/admin" title="admin">Admin panel</a>
+          </li>
         </ul>
 
-        <div class="home-content__buttons modal-button-toggle"><a href="#contact" class="smoothscroll btn btn--stroke"> Login / Signup </a></div>
+        <div class="home-content__buttons modal-button-toggle"><button class="smoothscroll btn btn--stroke"> Login / Signup </button></div>
 
         <p>
           Perspiciatis hic praesentium nesciunt. Et neque a dolorum
-          <a href="#0">voluptatem</a> porro iusto sequi veritatis libero enim.
+          <a href="#">voluptatem</a> porro iusto sequi veritatis libero enim.
           Iusto id suscipit veritatis neque reprehenderit.
         </p>
 
@@ -61,7 +58,7 @@
       </div>
     </nav>
 
-    <a @click="toggleMenu" class="header-menu-toggle" href="#0">
+    <a @click="toggleMenu" class="header-menu-toggle" href="#">
       <span class="header-menu-text">Menu</span>
       <span class="header-menu-icon"></span>
     </a>
@@ -107,7 +104,7 @@ export default {
 .modal-button-toggle {
   padding: 0 0 4rem 0;
   .btn {
-    width: 185px;
+    width: 195px;
     margin-top: 0;
   }
 }

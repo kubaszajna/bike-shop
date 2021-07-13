@@ -1,5 +1,4 @@
 <template>
-    <!-- <navbar></navbar> -->
     <section id="home" class="s-home target-section">
 
         <div class="overlay"></div>
@@ -21,7 +20,7 @@
                     <a href="#contact" class="smoothscroll btn btn--stroke">
                         Start a Project
                     </a>
-                    <a href="#about" class="smoothscroll btn btn--stroke">
+                    <a href="#services" class="smoothscroll btn btn--stroke">
                         More About Us
                     </a>
                 </div>
@@ -59,7 +58,7 @@
 
     </section> 
     <the-navbar></the-navbar>
-    <hero></hero>
+    <services></services>
     <product-custom></product-custom>
     <product-list></product-list>
     <section id='works' class="s-works">
@@ -219,21 +218,18 @@
             </div>
         </div>
     </section>
-    <login></login>
     <mini-cart></mini-cart>
 </template>
 
 <script>
 import TheNavbar from "@/components/layout/TheNavbar.vue";
-import Hero from "@/components/homepage/Hero.vue";
-import Login from "@/components/authentication/Login.vue";
+import Services from "@/components/homepage/Services.vue";
 
 export default {
   name: "Home",
   components: {
     TheNavbar,
-    Hero,
-    Login,
+    Services
   }
 };
 </script>

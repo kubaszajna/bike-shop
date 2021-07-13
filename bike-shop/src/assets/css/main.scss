@@ -829,6 +829,7 @@ select:-webkit-autofill:focus {
 *
 * ------------------------------------------------------------------- */
 .btn,
+.link,
 button,
 input[type='submit'],
 input[type='reset'],
@@ -853,6 +854,12 @@ input[type='button'] {
   border: 0.2rem solid #c5c5c5;
 }
 
+.link.small {
+  padding: 0 2rem;
+  height: 4rem;
+  line-height: calc(4rem - 0.2rem);
+}
+
 .btn:hover,
 button:hover,
 input[type='submit']:hover,
@@ -867,6 +874,13 @@ input[type='button']:focus {
   border-color: #b8b8b8;
   color: #000000;
   outline: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 /* button primary

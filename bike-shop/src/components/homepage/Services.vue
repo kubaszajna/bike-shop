@@ -87,15 +87,3 @@
         </div>
     </section>
 </template>
-
-<script>
-export default {
-  name: "Hero",
-  props: {
-    msg: String,
-  },
-};
-</script>
-
-<style scoped lang="scss">
-</style>
