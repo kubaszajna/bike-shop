@@ -17,7 +17,7 @@
                 </h1>
 
                 <div class="home-content__buttons">
-                    <a href="#contact" class="smoothscroll btn btn--stroke">
+                    <a href="#custom" class="smoothscroll btn btn--stroke">
                         Start a Project
                     </a>
                     <a href="#services" class="smoothscroll btn btn--stroke">

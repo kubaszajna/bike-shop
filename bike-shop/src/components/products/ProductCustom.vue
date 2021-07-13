@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-container">
+  <div id="custom" class="custom-container">
     <div id="wrap">
       <input class="initial" type="checkbox" />
       <input class="wheel1" name="wheel" type="radio" />

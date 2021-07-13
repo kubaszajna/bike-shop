@@ -1,98 +1,37 @@
 <template>
   <div class="mini-cart">
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="miniCart"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">My Bag</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+    <div class="modal-cart">
+      <h5 class="modal-title" id="exampleModalLabel">My Bag</h5>
+      <button type="button" class="close close-button">X</button>
+
+      <ul>
+        <li v-for="item in cartState" :key="item.id" class="item">
+          <div class="buttons">
+            <span class="like-btn">&#10084;</span>
           </div>
-          <div class="modal-body">
-            <ul>
-              <li v-for="item in cartState" :key="item.id" class="media">
-                <img
-                  :src="item.productImage"
-                  class="product-image align-self-center mr-3"
-                  alt=""
-                />
-                <div class="media-body">
-                  <h5 class="mt-0">
-                    {{ item.productName }}
-                    <span
-                      class="float-right close-btn"
-                      @click="deleteItem(item)"
-                      >X</span
-                    >
-                  </h5>
-                  <p class="mt-0">
-                    {{ item.productPrice * item.productQuantity + ' $' }}
-                  </p>
-                  <p class="mt-0">Quantity : {{ item.productQuantity }}</p>
-                </div>
-              </li>
-            </ul>
+          <div class="image">
+            <img
+              :src="item.productImage"
+              class="product-image align-self-center mr-3"
+              alt=""
+            />
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Continue Shopping
-            </button>
-            <router-link
-              to="checkout"
-              type="button"
-              class="btn btn-primary"
-              data-dismiss="modal"
-              >Checkout</router-link
-            >
+          <div class="description">
+            <span>
+              {{ item.productName }}
+            </span>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="buttons">
-        <span class="delete-btn"></span>
-        <span class="like-btn"></span>
-      </div>
-
-      <div class="image">
-        <img src="item-1.png" alt="" />
-      </div>
-
-      <div class="description">
-        <span>Common Projects</span>
-        <span>Bball High</span>
-        <span>White</span>
-      </div>
-
-      <div class="quantity">
-        <button class="plus-btn" type="button" name="button">
-          <img src="plus.svg" alt="" />
-        </button>
-        <input type="text" name="name" value="1" />
-        <button class="minus-btn" type="button" name="button">
-          <img src="minus.svg" alt="" />
-        </button>
-      </div>
-
-      <div class="total-price">$549</div>
+          <div class="quantity">
+              Quantity : {{ item.productQuantity }}
+          </div>
+          <div class="total-price">
+            {{ item.productPrice * item.productQuantity + ' $' }}
+          </div>
+          <div class="buttons">
+            <span @click="deleteItem(item)" class="delete-btn">X</span>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -157,12 +96,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-// .close-btn {
-//   cursor: pointer;
-// }
-// .product-image {
-//   width: 80px;
-// }
+.close-btn {
+  cursor: pointer;
+}
+.product-image {
+  width: 100px;
+  transform: translateY(25px);
+}
 
 * {
   box-sizing: border-box;
@@ -188,6 +128,20 @@ body {
   flex-direction: column;
 }
 
+.modal-cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem 0;
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+  }
+}
+
 .title {
   height: 60px;
   border-bottom: 1px solid #e1e8ee;
@@ -197,10 +151,16 @@ body {
   font-weight: 400;
 }
 
+.modal-title {
+  width: 120px;
+  margin-left: 3rem;
+}
+
 .item {
   padding: 20px 30px;
   height: 120px;
   display: flex;
+  align-items: baseline;
 }
 
 .item:nth-child(3) {
@@ -279,7 +239,7 @@ body {
 }
 .quantity {
   padding-top: 20px;
-  margin-right: 60px;
+  margin-right: 30px;
 }
 .quantity input {
   -webkit-appearance: none;

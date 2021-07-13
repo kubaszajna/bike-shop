@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import $ from 'jquery';
+// import $ from 'jquery';
 
 export default {
   name: "add-to-cart",
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     addToCart() {
-      $("#miniCart").modal("show");
+      // $("#miniCart").modal("show");
       // let miniCart = document.querySelector('#miniCart');
       // miniCart.modal('show');
       this.$store.commit("cartModule/addToCart", this.item);
