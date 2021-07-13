@@ -15,12 +15,10 @@
                         <div class="input-block">
                             <label for="email" class="input-label">Email</label>
                             <input type="email" v-model="emailLogin" id="emailLogin" placeholder="Email">
-                            {{ emailLogin }}
                         </div>
                         <div class="input-block">
                             <label for="password" class="input-label">Password</label>
                             <input type="password" v-model="passwordLogin" id="passwordLogin" placeholder="Password">
-                            {{ passwordLogin }}
                         </div>
                         <div class="modal-buttons">
                         <a href="" class="">Forgot your password?</a>
