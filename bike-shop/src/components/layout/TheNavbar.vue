@@ -1,7 +1,7 @@
 <template>
   <header class="s-header" :class="{ 'menu-is-open': navigationOpen }">
     <div class="header-logo">
-      <a class="site-logo" href="index.html">
+      <a class="site-logo" href="#">
         <img src="../../assets/images/logo-biker.png" alt="Homepage" />
       </a>
     </div>
